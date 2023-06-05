@@ -15,16 +15,14 @@ class FinancialYearTest extends TestCase
      */
     public function test_non_numeric_start_throws_exception()
     {
-        $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage("Start year must be numeric");
+        $this->expectException(\TypeError::class);
 
         new FinancialYear('foo');
     }
 
     public function test_non_numeric_end_throws_exception()
     {
-        $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage("End year must be numeric");
+        $this->expectException(\TypeError::class);
 
         new FinancialYear(0, 'foo');
     }
@@ -32,7 +30,7 @@ class FinancialYearTest extends TestCase
     public function test_start_after_end_throws_exception()
     {
         $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage("Start year must be the year before end year");
+        $this->expectExceptionMessage("end year must be the year after start year");
 
         new FinancialYear(2, 1);
     }
@@ -40,7 +38,7 @@ class FinancialYearTest extends TestCase
     public function test_start_and_end_not_sequential_throws_exception()
     {
         $this->expectException(\InvalidArgumentException::class);
-        $this->expectExceptionMessage("Start year must be the year before end year");
+        $this->expectExceptionMessage("end year must be the year after start year");
 
         new FinancialYear(1, 3);
     }
