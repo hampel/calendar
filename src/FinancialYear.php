@@ -13,22 +13,13 @@ class FinancialYear
      * @param int $startYear start year, must be a numeric value
      * @param int $endYear (optional) end year - if supplied, must be a numeric value and one higher than start year
      */
-    public function __construct($startYear, $endYear = null)
+    public function __construct(int $startYear, int $endYear = null)
     {
-        if (!is_numeric($startYear))
-        {
-            throw new InvalidArgumentException("Start year must be numeric");
-        }
-
         if ($endYear)
         {
-            if (!is_numeric($endYear))
-            {
-                throw new InvalidArgumentException("End year must be numeric");
-            }
             if (($startYear > $endYear) || (($endYear - $startYear) != 1))
             {
-                throw new InvalidArgumentException("Start year must be the year before end year");
+                throw new InvalidArgumentException("end year must be the year after start year");
             }
         }
         else
@@ -44,7 +35,7 @@ class FinancialYear
      * @param int $startYear (optional) start year - if not specified, will use the current date to determine the financial year
      * @return FinancialYear
      */
-    public static function create($startYear = null) : FinancialYear
+    public static function create(int $startYear = null) : FinancialYear
     {
         if (!$startYear)
         {
@@ -74,7 +65,7 @@ class FinancialYear
      * @param string $ymd a string in the format "Y-m-d" which will be used to determine the financial year
      * @return FinancialYear
      */
-    public static function createFromYmd($ymd) : FinancialYear
+    public static function createFromYmd(string $ymd) : FinancialYear
     {
         return self::createFromDate(Carbon::createFromFormat("Y-m-d", $ymd));
     }
@@ -83,7 +74,7 @@ class FinancialYear
      * @param string $fy a string in the format "0000-00" representing the financial year. The first four digits of the string will be used to create the financial year object
      * @return FinancialYear
      */
-    public static function createFromString($fy) : FinancialYear
+    public static function createFromString(string $fy) : FinancialYear
     {
         return self::create(substr($fy, 0, 4));
     }
