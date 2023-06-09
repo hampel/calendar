@@ -1,6 +1,6 @@
 {
     "name": "hampel/calendar",
-    "description": "Wrapper around Carbon to add monthly / quarterly / yearly / financial year functions",
+    "description": "Utility classes to use with Carbon for working with month, quarter, year and financial year time periods",
     "authors": [
         {
             "name": "Simon Hampel",
