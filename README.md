@@ -1,21 +1,17 @@
 Calendar
 ========
 
-A simple wrapper for [Carbon](https://carbon.nesbot.com/) which adds calendar functions for working with time periods: 
-months; quarters; years & financial years
+Utility classes to use with [Carbon](https://carbon.nesbot.com/) for working with month, quarter, year and financial 
+year time periods
 
-By [Simon Hampel](mailto:simon@hampelgroup.com).
+By [Simon Hampel](mailto:simon@hampelgroup.com)
 
 Installation
 ------------
 
-The recommended way of installing Calendar is through [Composer](http://getcomposer.org):
+To install using composer, run the following command:
 
-    {
-        "require": {
-            "hampel/calendar": "^1.0"
-        }
-    }
+`composer require hampel/calendar`
 
 Usage
 -----
