@@ -9,8 +9,8 @@
         }
     ],
     "support": {
-        "issues": "https://bitbucket.org/hampel/calendar/issues",
-        "source": "https://bitbucket.org/hampel/calendar/src"
+        "issues": "https://github.com/hampel/calendar/issues",
+        "source": "https://github.com/hampel/calendar"
     },
     "keywords": [
         "carbon",
@@ -18,7 +18,7 @@
         "quarter",
         "financial year"
     ],
-    "homepage": "https://bitbucket.org/hampel/calendar",
+    "homepage": "https://github.com/hampel/calendar",
     "license": [
         "MIT"
     ],
