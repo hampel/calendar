@@ -1,6 +1,4 @@
-<?php
-
-namespace Tests\Unit;
+<?php namespace Tests;
 
 use Carbon\Carbon;
 use Hampel\Calendar\FinancialYear;
